@@ -89,7 +89,7 @@ void StackVM::execute()  {
       break;
 
     default:
-      std::cout <<"[#] Unusual type of opcode : " << type<<std::endl;
+      std::cout <<"[#] ERROR : opcode: " << type<<" not recognised."<<std::endl;
       break;
   }
   return;

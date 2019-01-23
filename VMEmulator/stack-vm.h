@@ -29,12 +29,12 @@ class StackVM {
   void executeHelper();
   void execute();
   void doPrimitive(); // Helper function for executing instructions.
+  void loadProgram (i32 prog);
 
   public:
 
   StackVM();
   void run();
-  void loadProgram (i32 prog);
   void RunProgram (std::vector<i32> prog);
 };
 

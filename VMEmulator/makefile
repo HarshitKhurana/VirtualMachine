@@ -16,3 +16,6 @@ clean:
 
 rm:
 		rm -f *.o stack-vm
+
+run:
+		./stack-vm
