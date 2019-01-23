@@ -1,5 +1,5 @@
 
-#include "stack-vm.h"
+#include "vmEmulator.h"
 
 // Define functions
 
@@ -15,7 +15,7 @@
 // The program counter points to the next instruction to execute.
 // Stack pointer in our case grows upwards as opposed to usual way of going downwards.
  
-StackVM::StackVM()  {
+VMEmulator::VMEmulator()  {
   pc = 100 ; // Program counter
   sp = 0;   // Stack pointer
   type = 0; // Type of instruction
@@ -25,22 +25,22 @@ StackVM::StackVM()  {
 }
 
 // It will simply return the type of instruction i.e last 4 bits.
-i32 StackVM::getType(i32 instruction)  {
+i32 VMEmulator::getType(i32 instruction)  {
   return instruction & 15;
 }
 
 // Everything except the last 4 bits is data
-i32 StackVM::getData(i32 instruction)  {
+i32 VMEmulator::getData(i32 instruction)  {
   return instruction>>4;
 }
 
 // Read 32 bits from memory , which is pointed to by PC and return it after incrementing PC.
-i32 StackVM::fetch()  {
+i32 VMEmulator::fetch()  {
   return memory[++pc];
 }
 
 // this function is the wrapper which internally calls getType & getData and push data on TOS.
-void StackVM::decode(i32 instruction)  {
+void VMEmulator::decode(i32 instruction)  {
   type = getType(instruction);
   data = getData(instruction);
   memory[sp] = data >> 14; // arg1 pushed first i.e upper 14 bits of data.
@@ -49,7 +49,7 @@ void StackVM::decode(i32 instruction)  {
 }
 
 // Executes the instruction based on type|opcode and data and pushes result to TOS.
-void StackVM::execute()  {
+void VMEmulator::execute()  {
   // For opcodes refer to README.md
   std::cout << "[*] Executing OPCODE : "<< type<<std::endl;
   if (type==HALT)   {
@@ -96,7 +96,7 @@ void StackVM::execute()  {
 }
 
 // Fetches next instruction to execute from memory and pass it to execute function.
-void StackVM::executeHelper()  {
+void VMEmulator::executeHelper()  {
   i32 instruction = fetch();
   decode(instruction);
   execute();
@@ -105,7 +105,7 @@ void StackVM::executeHelper()  {
 }
 
 // It starts running the program inside VM.
-void StackVM::run()   {
+void VMEmulator::run()   {
   pc --;  // As fetch increments.
   while (running)   {
     executeHelper(); // It internally calls fetch -> decode -> execute in that order.
@@ -113,14 +113,14 @@ void StackVM::run()   {
   }
 }
 
-void StackVM::loadProgram (i32 newInstr)   {
+void VMEmulator::loadProgram (i32 newInstr)   {
   running=!running;
   memory[pc] = newInstr;
 //  cout <<"[*] Pc points to instruction : " << memory[pc]<<endl;
   run();
 }
 
-void StackVM::RunProgram (std::vector <i32> prog)   {
+void VMEmulator::RunProgram (std::vector <i32> prog)   {
   for (uint i = 0 ; i < prog.size() ; i++)   {
     loadProgram(prog[i]);
   }

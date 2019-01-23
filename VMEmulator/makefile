@@ -1,21 +1,21 @@
 CFLAGS=-std=c++11 -Wall
 
-all: stack-vm
+all: vmEmulator
 
-stack-vm: stack-vm.o main.o
-		$(CXX) $(CFLAGS) main.o -o stack-vm
+vmEmulator: vmEmulator.o main.o
+		$(CXX) $(CFLAGS) main.o -o vmEmulator
 
 main.o: main.cpp
 		$(CXX) $(CFLAGS) -c main.cpp
 
-stack-vm.o: stack-vm.h stack-vm.cpp
-		$(CXX) $(CFLAGS) -c stack-vm.cpp
+vmEmulator.o: vmEmulator.h vmEmulator.cpp
+		$(CXX) $(CFLAGS) -c vmEmulator.cpp
 
 clean:
-		rm -f *.o stack-vm
+		rm -f *.o vmEmulator
 
 rm:
-		rm -f *.o stack-vm
+		rm -f *.o vmEmulator
 
 run:
-		./stack-vm
+		./vmEmulator

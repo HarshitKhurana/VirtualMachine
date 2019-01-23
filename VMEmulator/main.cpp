@@ -1,4 +1,4 @@
-#include"stack-vm.cpp"
+#include"vmEmulator.cpp"
 
 // operation : 1st 4bits + val1 next 14 bits + val2 last 14 bits
 i32 generateInstruction(int  operation , int val1, int val2)
@@ -8,7 +8,7 @@ i32 generateInstruction(int  operation , int val1, int val2)
 
 int main( int argc,  char *argv[]){
 
-  StackVM vm;
+  VMEmulator vm;
   std :: vector<i32> prog;
 
   /*

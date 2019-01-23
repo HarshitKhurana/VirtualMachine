@@ -11,7 +11,7 @@ using namespace std;
 // Everything we use will be for 32 bit
 typedef int32_t i32 ;
 
-class StackVM {
+class VMEmulator {
   i32 pc ; // Program counter
   i32 sp ;   // Stack pointer
   i32 type; // Type of instruction
@@ -33,7 +33,7 @@ class StackVM {
 
   public:
 
-  StackVM();
+  VMEmulator();
   void run();
   void RunProgram (std::vector<i32> prog);
 };
