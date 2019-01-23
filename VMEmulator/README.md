@@ -92,9 +92,9 @@
 
 <h3> [*] Resources|References </h3><hr>
 
- &emsp; --> <a href=" https://bartoszsypytkowski.com/simple-virtual-machine"> Simple VM </a>(takes into account CPU Registers too)<br>
- &emsp; --> <a href=" https://en.wikibooks.org/wiki/Creating_a_Virtual_Machine/Introduction"> General guide to VM</a><br>
- &emsp; --> <a href=" https://www.codeproject.com/KB/recipes/B32Machine1/VMCS.pdf">Code Project : VM </a><br>
- &emsp; --> <a href=" https://justinmeiners.github.io/lc3-vm">VM implementing LC-3</a> <br>
- &emsp; --> <a href=" https://www.youtube.com/playlist?list=PLSiFUSQSRYAOFwfP-aMzXJlWKVyIuWfPU"> VM implementation</a>(along with assembler, tokenizer etc)<br>
- &emsp; --> <a href=" InfoQ : https://www.youtube.com/watch?v=OjaAToVkoTw"> InfoQ : VM</a><br>
+ &emsp; --> <a href="https://bartoszsypytkowski.com/simple-virtual-machine"> Simple VM </a>(takes into account CPU Registers too)<br>
+ &emsp; --> <a href="https://en.wikibooks.org/wiki/Creating_a_Virtual_Machine/Introduction"> General guide to VM</a><br>
+ &emsp; --> <a href="https://www.codeproject.com/KB/recipes/B32Machine1/VMCS.pdf"> Code Project : VM </a><br>
+ &emsp; --> <a href="https://justinmeiners.github.io/lc3-vm"> VM implementing LC-3</a> <br>
+ &emsp; --> <a href="https://www.youtube.com/playlist?list=PLSiFUSQSRYAOFwfP-aMzXJlWKVyIuWfPU"> VM implementation</a>(along with assembler, tokenizer etc)<br>
+ &emsp; --> <a href="InfoQ : https://www.youtube.com/watch?v=OjaAToVkoTw"> InfoQ : VM</a><br>
