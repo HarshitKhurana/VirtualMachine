@@ -44,7 +44,7 @@
 
   ADD        : 0
   SUBTRACT   : 1
-  MULRIPLY   : 2 
+  MULTIPLY   : 2 
   DIVIDE     : 3
   MODULUS    : 4 
   HALT       : 5

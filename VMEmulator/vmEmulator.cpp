@@ -74,7 +74,7 @@ void VMEmulator::execute()  {
       break;
       
     case MUL:
-      std::cout << "[*] Multiplying" << arg1 <<" and "<<arg2 <<" and storing on TOS "<<std::endl;
+      std::cout << "[*] Multiplying " << arg1 <<" and "<<arg2 <<" and storing on TOS "<<std::endl;
       memory[sp] = arg1 * arg2;
       break;
       
